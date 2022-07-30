@@ -20,7 +20,11 @@
 
 
 ## [7,3,5,8,2,9,4,15,6] Dizisinin İlk 4 Adımı
+### 1. Adım
 [2,3,5,8,7,9,4,15,6]
-[2,3,4,8,7,9,5,15,6]
-[2,3,4,5,7,9,8,15,6]
-[2,3,4,5,6,9,8,15,7]
+### 2. Adım
+[2,3,4,8,7,9,5,15,6] 3ün yerdeğiştirmesine gerek yok, ondan sonraki sırada olan 5 ve 4 yer değiştirir.
+### 3. Adım
+[2,3,4,5,7,9,8,15,6] 8 ve 5 yer değiştirir.
+### 4. Adım
+[2,3,4,5,6,9,8,15,7] 6 ve 7 yer değiştirir.
