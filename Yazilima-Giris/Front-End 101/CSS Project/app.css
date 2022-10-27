@@ -1,0 +1,46 @@
+body{
+    background-color: lightpink;
+}
+h1{
+    display: flex;
+    justify-content:center;
+}
+h2{
+    display: flex;
+    justify-content:center;
+
+}
+.links{
+    display:flex;
+    align-items: center;
+    justify-items: center;
+    justify-content:space-between;
+    margin: 5%;
+}
+p{
+    display: flex;
+    margin: 5%;
+    margin-top: 0%;
+    align-items: flex-start;
+    justify-items: center;
+}
+p:hover{
+    background-color: black;
+    color: red;
+}
+ul{
+    font: bold;
+    font-style:italic ;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
+a{
+    display: flex;
+    justify-content: center;
+}
+img{
+    max-width: 400px;
+    max-height: 400px;
+}
