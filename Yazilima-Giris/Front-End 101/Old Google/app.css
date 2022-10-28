@@ -1,0 +1,12 @@
+.logo{
+    display: flex;
+    justify-content: center;
+}
+.font{
+    font-size: small;
+    margin-top: 20px;
+}
+.tab{
+    margin-left: 5%;
+    margin-right:5%;
+}
