@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import Form from '../Form/form';
 import List from '../List/list';
 function Todos() {
@@ -19,11 +19,14 @@ function Todos() {
         console.log(todos);
     }, [todos]);
     return (
-        <div id='container'>
-            <h1>Todos</h1>
-            <Form addTodo={setTodos} todos={todos} />
-            <List todos={todos} />
+        <div>
+            <h1>todos</h1>
+            <div id='container'>
 
+                <Form addTodo={setTodos} todos={todos} />
+                <List todos={todos} />
+
+            </div>
         </div>
     )
 }
