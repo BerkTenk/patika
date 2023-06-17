@@ -1,0 +1,40 @@
+#container {
+    width: 400px;
+    background-color: aliceblue;
+    padding: 20px;
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 5px;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+}
+
+.list>li {
+    background-color: aqua;
+    padding: 5px;
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: space-around;
+}
+
+h1{
+    justify-content: center;
+    display: flex;
+}
+
+.btn{
+    display: flex;
+    padding: 10px;
+    justify-content: flex-end;
+}
