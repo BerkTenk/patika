@@ -9,7 +9,7 @@ function Weather() {
   const [forecastData, setForecastData] = useState([]);
 
   useEffect(() => {
-    axios(`https://api.openweathermap.org/data/2.5/forecast?q=${selectedCity}&units=metric&appid=f5fea04b50574fd876eb0cb8f961c4bc`)
+    axios(`https://api.openweathermap.org/data/2.5/forecast?q=${selectedCity}&lang=tr&units=metric&appid=f5fea04b50574fd876eb0cb8f961c4bc`)
       .then((res) => {
         const forecastList = res.data.list;
         const groupedForecasts = groupForecastsByDay(forecastList);
@@ -73,14 +73,14 @@ function Weather() {
       </select>
       
       {forecastData.map((forecast, index) => (
-        <div key={index} className='weather'>
+        <div key={index} className={index === 0 ?  "weather-first" : "weather"  }>
           <h2>{new Date(forecast.dt_txt).toDateString()}</h2>
-          <p>Min Temperature: {forecast.main.temp_min}</p>
-          <p>Max Temperature: {forecast.main.temp_max}</p>
-          <p>Description: {forecast.weather[0].description}</p>
           {forecast.weather[0].icon && (
             <img src={`http://openweathermap.org/img/w/${forecast.weather[0].icon}.png`} alt="Weather Icon" />
           )}
+          <p>Min Temperature: {forecast.main.temp_min}°</p>
+          <p>Max Temperature: {forecast.main.temp_max}°</p>
+          <p>Description: {forecast.weather[0].description}</p>
         </div>
       ))}
     </div>
