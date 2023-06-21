@@ -1,17 +1,17 @@
 import './App.css';
-import Header from './components/Header';
-import Weather from "./components/weather";
 import { CityContextProvider } from './contexts/CityContext';
+import { ThemeProvider } from './contexts/ThemeContext';
+import Body from './components/Body';
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <hr/>
-      <CityContextProvider>
-      <Weather/>
-      </CityContextProvider>
-    </div>
+    
+      <ThemeProvider>
+        <CityContextProvider>
+          <Body/>
+        </CityContextProvider>
+      </ThemeProvider>
+    
   );
 }
 

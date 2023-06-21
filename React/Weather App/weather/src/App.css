@@ -4,12 +4,14 @@
 }
 
 .app.dark {
-  text-align: center;
+  height: 100vh;
   background-color: black;
+  text-align: center;
   color: white;
 }
 
 .app.light {
+  height: 100vh;
   text-align: center;
   background-color: white;
   color: black;

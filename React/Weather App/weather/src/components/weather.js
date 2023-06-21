@@ -80,7 +80,7 @@ function Weather() {
           )}
           <p>Min Temperature: {forecast.main.temp_min}°</p>
           <p>Max Temperature: {forecast.main.temp_max}°</p>
-          <p>Description: {forecast.weather[0].description}</p>
+          <p>Hava {forecast.weather[0].description}</p>
         </div>
       ))}
     </div>
