@@ -3,6 +3,15 @@ document.addEventListener('DOMContentLoaded', function() {
     if (savedList) {
         const myUL = document.getElementById('myUL');
         myUL.innerHTML = savedList;
+
+        const closeButtons = document.querySelectorAll('.close');
+        closeButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                var div = this.parentElement;
+                div.style.display = 'none';
+                updateLocalStorage(myUL);
+            });
+        });
     }
 });
 
@@ -13,6 +22,9 @@ list.addEventListener('click', function(ev) {
   }
 }, false);
 
+function updateLocalStorage(ulElement) {
+  localStorage.setItem('todoList', ulElement.innerHTML);
+}
 // Create a new list item when clicking on the "Add" button
 function newElement() {
     var input = document.getElementById('myInput');
@@ -55,11 +67,6 @@ function newElement() {
     }, 3000); // Clear the message after 3 seconds
 }
 
-  var span = document.createElement('span');
-  var txt = document.createTextNode('\u00D7');
-  span.className = 'close';
-  span.appendChild(txt);
-  li.appendChild(span);
 
   span.onclick = function() {
     var div = this.parentElement;
