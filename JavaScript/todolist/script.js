@@ -31,7 +31,7 @@ function newElement() {
     var inputValue = input.value.trim(); // Trim leading and trailing spaces
 
     if (inputValue === '') {
-        showError('You must write something!');
+      showErrorToast('Listeye boş ekleme yapamazsınız!');
     } else {
         // Create new list item and append it to UL
         var li = document.createElement('li');
@@ -48,6 +48,7 @@ function newElement() {
         const myUL = document.getElementById('myUL');
         myUL.appendChild(li);
         localStorage.setItem('todoList', myUL.innerHTML);
+        showSuccessToast('Listeye eklendi.');
     }
 
     input.value = '';
@@ -72,3 +73,15 @@ function newElement() {
     var div = this.parentElement;
     div.style.display = 'none';
   };
+
+  function showSuccessToast() {
+    var successToast = document.getElementById('successToast');
+    var toast = new bootstrap.Toast(successToast);
+    toast.show();
+  }
+  
+  function showErrorToast() {
+    var errorToast = document.getElementById('errorToast');
+    var toast = new bootstrap.Toast(errorToast);
+    toast.show();
+  }
