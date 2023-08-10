@@ -29,6 +29,11 @@ h2 {
   margin-left: 15px;
 }
 
+.filter-btns {
+  display: flex;
+  gap: 2em; 
+}
+
 .photo {
   width: 30%;
   height: 175px;
@@ -57,3 +62,4 @@ h4 {
 .menu-text {
   padding-top: 20px;
 }
+

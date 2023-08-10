@@ -82,6 +82,21 @@ const menu = [
   },
 ];
 
+const filterBtnContainer = document.querySelector('.filter-btns');
+
+const categories = ['All', 'Korea', 'Japan', 'China'];
+
+categories.forEach(category => {
+  const btn = document.createElement('button');
+  btn.classList.add('filter-btn');
+  btn.setAttribute('data-category', category);
+  btn.textContent = category;
+  filterBtnContainer.appendChild(btn);
+  // const spacer = document.createElement('div');
+  // spacer.classList.add('spacer');
+  // filterBtnContainer.appendChild(spacer);
+});
+
 function showMenu(menuItems) {
   let menuSection = document.querySelector('.section-center');
   menuSection.innerHTML = menuItems.join("");
