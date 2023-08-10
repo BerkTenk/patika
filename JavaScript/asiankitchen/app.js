@@ -82,25 +82,45 @@ const menu = [
   },
 ];
 
-function showMenu() {
-  let menuItems = menu.map((item) => {
-    return `  <div class="menu-items col-lg-6 col-sm-12">
-                  
-    <img src="${item.img}" alt="${item.title}" class="photo">
-              
-                  <div class="menu-info">
-                    <div class="menu-title">
-                      <h4>${item.title}</h4>
-                      <h4 class="price">${item.price}</h4>
-                    </div>
+function showMenu(menuItems) {
+  let menuSection = document.querySelector('.section-center');
+  menuSection.innerHTML = menuItems.join("");
+}
 
-                    <div class="menu-text">${item.desc}</div>
-                  </div>
-              </div>
+function displayMenu(menuList) {
+  let menuItems = menuList.map((item) => {
+    return `
+      <div class="menu-items col-lg-6 col-sm-12">
+        <img src="${item.img}" alt="${item.title}" class="photo">
+        <div class="menu-info">
+          <div class="menu-title">
+            <h4>${item.title}</h4>
+            <h4 class="price">${item.price}</h4>
+          </div>
+          <div class="menu-text">${item.desc}</div>
+        </div>
+      </div>
     `;
   });
 
-  menuDiv.innerHTML = menuItems.join("");
-}  
+  showMenu(menuItems);
+}
 
-showMenu();
+function filterMenu(category) {
+  if (category === "All") {
+    displayMenu(menu);
+  } else {
+    let filteredMenu = menu.filter(item => item.category === category);
+    displayMenu(filteredMenu);
+  }
+}
+
+let filterBtns = document.querySelectorAll('.filter-btn');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', function() {
+    let category = btn.getAttribute('data-category');
+    filterMenu(category);
+  });
+});
+
+displayMenu(menu); // Sayfa yüklendiğinde tüm menü öğelerini göster
