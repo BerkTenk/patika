@@ -100,6 +100,7 @@ categories.forEach(category => {
 function showMenu(menuItems) {
   let menuSection = document.querySelector('.section-center');
   menuSection.innerHTML = menuItems.join("");
+  
 }
 
 function displayMenu(menuList) {
