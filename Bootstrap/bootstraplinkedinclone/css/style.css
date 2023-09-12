@@ -54,6 +54,19 @@ button.mediatext:hover {
   color: #5f5f5f;
 }
 
+.mfoto{
+  fill: #70B5F9;
+}
+.mvideo{
+  fill: #7FC15E;
+}
+.metkinlik{
+  fill: #E7A33E;
+}
+.myazi{
+  fill: #F5987E;
+}
+
 i {
   color: gray;
   margin-top: 8px;
